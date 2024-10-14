@@ -10,7 +10,7 @@ import qrcode
 from PIL import Image, ImageDraw
 
 headers = {
-	"x-api-key": "af12d4c4-499e-4843-96be-063a41ff1b6e", # put your api key here
+	"x-api-key": "your sigma api key", # put your api key here
 	"Accept": "application/json"
 }
 
