@@ -1,13 +1,16 @@
 import requests
 from colorama import Fore, Style, init
 import time
+import string
 import json
 import os
 import random
 import sys
+import qrcode
+from PIL import Image, ImageDraw
 
 headers = {
-	"x-api-key": "", # put your api key here
+	"x-api-key": "af12d4c4-499e-4843-96be-063a41ff1b6e", # put your api key here
 	"Accept": "application/json"
 }
 
@@ -30,12 +33,14 @@ ascii_art = r'''
 print(f"{Fore.LIGHTBLUE_EX}{ascii_art}")
 
 tool_selection = '''
-[1] Credit Card Checker           | [5] Roblox Info Fetcher      | [9]
-[2] Credit Card Generator         | [6] Discord Webhook Spammer  |
-[3] Domain Availability Checker   | [7] Discord Webhook Deleter  |
-[4] IP Logger                     | [8] Discord Webhook Message  |
+                      [DONATE] Support Me :)
+
+[1] Credit Card Checker           | [5] Roblox Info Fetcher      | [09]
+[2] Credit Card Generator         | [6] Discord Webhook Spammer  | [10]
+[3] Domain Availability Checker   | [7] Discord Webhook Deleter  | [11] 
+[4] IP Logger                     | [8] Discord Webhook Message  | [12]
 '''
-print(f"{Fore.GREEN}{tool_selection}")
+print(f"{Fore.LIGHTBLUE_EX}{tool_selection}")
 time.sleep(1.5)
 
 im = input(f"{Fore.GREEN}Enter Choice (>): ")
@@ -57,6 +62,7 @@ if im == '1':
         cc_valid = data_cc_check['data']['isValid']
         cc_ch = data_cc_check['data']['cardNumber']
         print(f"{Fore.LIGHTBLUE_EX}{cc_valid} | {cc_ch}")
+        time.sleep(4)
 
 if im == '2':
     im_cg = input(f"{Fore.LIGHTBLUE_EX}How Many Cards Do You Want To Generate (>): ")
@@ -138,3 +144,25 @@ if im == '8':
         print("Sent MSG")
     else:
         print(f"{Fore.RED}Invalid Webhook")
+
+if im == 'donate':
+    print(f"{Fore.LIGHTBLUE_EX}crypto | cashapp | paypal")
+    payment_method = input(f"{Fore.YELLOW}What Payment Method (>): ")
+    if payment_method == 'crypto':
+        print(f"{Fore.LIGHTBLUE_EX}BTC: bc1qk4hgud574043v63g7t6cmmqgw95vjklvkjtjcy")
+        print(f"{Fore.LIGHTBLUE_EX}ETH: 0x99DF6163Ea3BCCF9966d1c108b5771cd4f6A8928")
+        print(f"{Fore.LIGHTBLUE_EX}LTC: La6DTC5Y9dcRLRZEiDuoXctxe2ziPTEAfV")
+        print(f"{Fore.LIGHTBLUE_EX}XMR: 83qgo5cmAeciHA3BvqkB7abMn8eyRpnA5HuKXqqnGoFUZFkeWSGZSdaHkygkLxJW97EaK9QMu5Xq4EUe3REwwDcMB3vaRuP")
+        print(f"{Fore.RED}for others dm @spo.t - discord")
+        input("enter to exit.")
+
+    if payment_method == 'cashapp':
+        print(f"{Fore.YELLOW}$waterrblx | on cashapp")
+        input("enter to exit.")
+
+    if payment_method == 'paypal':
+        print(f"{Fore.GREEN}laughuntilretire@gmail.com | paypal email")
+        input("enter to exit.")
+
+if im == '9':
+    print("in beta!")
